@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Interactive card details form</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <main>
+      <!-- card section -->
+      <div class="card-section">
+        <img class="bg-img" src="images/bg-main-desktop.png" alt="bg-main-desktop">
+        <div class="card">
+          <div class="front-card-container">
+            <div class="front-card">
+              <img src="images/bg-card-front.png" alt="bg-card-front">
+              <div class="front-card-info">
+                <div class="circles">
+                <div class="solid-circle"></div>
+                <div class="empty-circle"></div>
+              </div>
+              <h2 id="displayNumber">0000 0000 0000 0000</h2>
+              <div class="bank-name">
+                <h3 id="displayName"> Jane Appleseed</h3>
+                <div class="displayExpire">
+                  <h3 id="displayExpireMonth">00</h3>
+                  <h3 id="displayExpireYear">/00</h3>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+    
+          <div class="back-card-container">
+            <div class="back-card">
+              <img src="images/bg-card-back.png" alt="bg-card-back">
+              <div class="back-card-info">
+                <h3 id="displayCvc">000</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- form-section -->
+      <div class="form-section">
+        <form name="card-form" action="#" autocomplete="off" method="post">
+          <div class="name">
+            <label for="name">Cardholder Name</label>
+            <input id="name" type="text" 
+              placeholder="e.g. Jane Appleseed"
+              minlength="8"
+              oninput="showName()">
+            <p class="errorMessage" id="nameError"></p>
+          </div>
+          <div class="number">
+            <label for="card-number">Card Number</label>
+            <input id="card-number" type="text" 
+              placeholder="e.g. 1234 5678 9123 0000"
+              maxlength="19"
+              oninput="showCardNumber()">
+            <p class="errorMessage" id="numberError"></p>
+          </div>
+          <div class="details">
+            <div class="expire">
+              <label for="expire">Exp. Date (MM/YY)</label>
+              <div class="expire-details">
+                <input id="expire-month" type="text" 
+                  placeholder="MM" maxlength="2"
+                  oninput="showExpireMonth()">
+                <input id="expire-year" type="text" 
+                  placeholder="YY" maxlength="2"
+                  oninput="showExpireYear()">
+                <p class="errorMessage" id="expireError"></p>
+              </div>
+            </div>
+            <div class="cvc">
+              <label for="cvc">cvc</label>
+              <input id="cvc" type="text" 
+                placeholder=" e.g. 123" maxlength="3"
+                 oninput="showCVC()">
+              <p class="errorMessage" id="cvcError"></p>
+            </div>
+          </div>
+          <button class="btn" type="submit">Confirm</button>
+        </form>
+      </div>
+      <!-- Completed state start -->
+      <div class="thank-you">
+        <img src="images/icon-complete.svg" alt="icon-complete">
+        <h2>Thank You!</h2>
+        <p>We've added your card details</p>
+        <button id="continueBtn" type="submit">Continue</button>
+      </div>
+    </main>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </body>
+  <script src="index.js"></script>
+</html>

@@ -1,0 +1,375 @@
+:root{
+    --White: hsl(0, 0%, 100%);
+    --Light-grayish-violet: hsl(270, 3%, 87%);
+    --Dark-grayish-violet: hsl(279, 6%, 55%);
+    --Very-dark-violet: hsl(278, 68%, 11%);
+    --Red-input-error: hsl(0, 100%, 66%);
+    --linear-gradient-from:hsl(249, 99%, 64%);
+    --linear-gradient-to:hsl(278, 94%, 30%);
+    --f-size:18px;
+    --fw: 500;
+}
+
+body{
+    font-family: 'Space Grotesk', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    display: flex;
+    align-items: center;
+}
+
+.card-section{
+    position: relative;
+}
+
+.card{
+    position: absolute;
+    top: 20%;
+    left: 30%;
+}
+
+.front-card-container{
+   position: relative;
+}
+
+.front-card{
+    position: absolute;
+    left: 12%;
+}
+
+.front-card-info{
+    color: white;
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+
+.circles{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.solid-circle{
+    border-radius: 50%;
+    background-color: white;
+    height: 50px;
+    width: 50px;
+}
+
+.empty-circle{
+    border-radius: 50%;
+    border: 2px solid white;
+    height: 20px;
+    width: 20px;
+}
+
+.front-card-info h2{
+    font-weight: 500;
+    letter-spacing: 5px;
+    margin-top: 4rem;
+}
+
+.bank-name{
+   display: flex;
+   gap: 9rem;
+}
+
+.bank-name h3{
+    font-weight: 500;
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.displayExpire{
+    display: flex;
+    gap: 0;
+}
+
+.back-card-container{
+    position: relative;
+}
+
+.back-card{
+    position: absolute;
+    top:16.875rem;
+    left: 6rem;
+}
+
+.back-card-info{
+    position: absolute;
+    top: 90px;
+    right: 60px;
+}
+
+.back-card-info h3{
+    color: white;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.form-section{
+    display: flex;
+    justify-content: center;
+    flex:1 1 50rem;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+label{
+    color: var(--Very-dark-violet);
+    font-size: 12px;
+    font-weight:600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+input{
+    border-radius: 8px;
+    border-color: var(--Light-grayish-violet);
+    border-width: 1px;
+    color: var(--Very-dark-violet);
+    padding: 0.8rem;
+    margin-top: 0.5rem;
+    
+}
+
+input:focus{
+    outline: thin solid var(--linear-gradient-from);
+}
+
+input::placeholder{
+    color: hsl(270, 3%, 75%);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.details{
+    display: flex;
+    gap: 1rem;
+}
+
+.expire input{
+    display: inline-block;
+    width: 50px;
+}
+
+.name, .number,.expire, .cvc{
+    display: flex;
+    flex-direction: column;
+}
+
+button{
+    background-color: var(--Very-dark-violet);
+    border-radius: 8px;
+    border-width: 0;
+    color: var(--White);
+    cursor: pointer;
+    font-family: 'Space Grotesk', sans-serif;
+    padding: 0.8rem;
+}
+
+.errorMessage{
+    color: var(--Red-input-error);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    display: none;
+    margin: 12 0 0;
+}
+
+/* thank-you template design */
+
+.thank-you{
+   text-align: center;
+   display: none;
+   flex: 1 1 50rem;
+}
+
+.thank-you h2{
+    color: var(--Very-dark-violet);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.thank-you p{
+    color: var(--Dark-grayish-violet);
+    font-weight: 600;
+}
+
+#continueBtn{
+    margin-top: 2rem;
+    width: 18.75rem;
+}
+
+@media(max-width:1300px) and (min-width:990px){
+    .bg-img{
+        height: 100vh;
+        width: 350px;
+    }
+
+    .form-section{
+        margin-top: -2rem;
+        margin-left: 15rem;
+    }
+
+    .thank-you{
+        margin-top: -8rem;
+    }
+
+    .front-card{
+        left: -1rem;
+    }
+
+    .back-card{
+        top: 15rem;
+        left:2rem;
+    }
+
+    .front-card img, .back-card img{
+        width: 370px;
+    }
+
+    .solid-circle{
+        height: 30px;
+        width: 30px;
+    }
+
+    .empty-circle{
+        height: 15px;
+        width: 15px;
+    }
+
+    #displayNumber{
+        font-size: 1.2rem;
+    }
+
+    #displayName{
+        font-size: 0.8rem;
+    }
+
+    .bank-name{
+        gap: 7.9rem;
+    }
+
+    .back-card-info{
+        top:68px;
+    }
+}
+
+@media(max-width:990px) and (min-width:600px){
+    main{
+        display: block;
+    }
+
+    .form-section{
+        margin-top: 6rem;
+    }
+    
+    .bg-img{
+        content: url(images/bg-main-mobile.png);
+        height: 350px;
+        width: 100vw;
+    }
+
+    .back-card{
+        top:-1.5rem;
+        left: 1rem;
+    }
+
+    .front-card{
+        top: 7rem;
+        left: -5.7rem;
+        z-index: 10;
+    }
+
+    .front-card-info{
+        left: 8%;
+    }
+}
+
+@media(max-width:600px){
+    main{
+        display: block;
+    }
+
+    .form-section{
+        margin: 5.5rem 2rem auto 2rem;
+    }
+    
+    .bg-img{
+        content: url(images/bg-main-mobile.png);
+        height: 300px;
+        width: 100vw;
+    }
+
+    .back-card{
+        top:1%;
+        left: -5rem;
+    }
+
+    .front-card{
+        top: 6.7rem;
+        left: -5.7rem;
+        z-index: 10;
+    }
+
+    .front-card img, .back-card img{
+        width: 340px;
+    }
+
+    .solid-circle{
+        height: 30px;
+        width: 30px;
+    }
+
+    .empty-circle{
+        height: 15px;
+        width: 15px;
+    }
+
+    #displayNumber{
+        font-size: 1.125rem;
+    }
+
+    #displayName{
+        font-size: 0.79rem;
+    }
+
+    .bank-name{
+        gap: 6.5rem;
+    }
+
+    .back-card-info{
+        top:68px;
+    }
+
+    .front-card-info{
+        left: 8%;
+    }
+
+    .expire-details input{
+        width: 40px;
+    }
+
+    #cvc{
+        width:70px
+    }
+
+    .thank-you{
+        margin-top: 6.5rem;
+    }
+}
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
